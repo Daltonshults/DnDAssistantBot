@@ -1,6 +1,8 @@
 ## Getting Started
 
-Install the requirements.
+Install the requirements using npm.
+
+`npm install`
 
 Create an OpenAI Assistant loading your preferred Dungeons and Dragons rule set into the file storage system of the bot you created. 
 
