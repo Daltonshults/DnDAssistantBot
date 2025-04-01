@@ -1,11 +1,16 @@
 'use client';
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Message, useAssistant } from '@ai-sdk/react';
 
 
 export default function ChatComponent() {
-  const { status, messages, input, submitMessage, handleInputChange } =
+  const { status, messages, threadId, input, submitMessage, handleInputChange } =
     useAssistant({ api: '/api/assistant' });
+
+  const capitalizeFirstLetter = (str: string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
 
   return (
     <div
@@ -57,8 +62,23 @@ export default function ChatComponent() {
               }
             }
           >
-            {`${message.role}: ${message.content}`}
+            <span style=
+            {
+              {
+                fontWeight: "bold"
+              }
+            }
+            >
+              {capitalizeFirstLetter(message.role)}
+              </span>
+              <ReactMarkdown
+                components={{
+                  p: ({ node, children }) => <span>{children}</span>,
+                }}
+              >
+                {`: ${message.content}`}</ReactMarkdown>
           </div>
+          <br/>
         </div>
       ))}
       </div>
