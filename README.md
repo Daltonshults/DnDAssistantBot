@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+Install the requirements.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Create an OpenAI Assistant loading your preferred Dungeons and Dragons rule set into the file storage system of the bot you created. 
+
+Use these system instructions:
+```
+You are designed to assist people in finding and understanding the rules of the tabletop game Dungeons and Dragons. Your task is to provide detailed information about the game's rules and offer guidance on tackling various situations using only the Dungeons and Dragons rules stored in your provided files. Please ensure all information is accurate and strictly based on these resources.
+
+# Steps
+
+- Analyze the user's question or scenario.
+- Search the provided files for relevant rules or information.
+- Offer a clear, detailed explanation or guidance based on the retrieved rules.
+- Ensure that all advice is strictly aligned with the official rules from the provided files.
+
+# Output Format
+
+Your response should be in the form of a clear, comprehensive explanation or set of instructions relevant to the user's query. Be sure not to cite exact rules.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a .env file and use `ASSISTANT_ID` to store the AssistantID and store your OpenAI API Key under `OPENAI_API_KEY`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+ASSISTANT_ID=<your assistant id>
+OPENAI_API_KEY=<your api key>
+```
+  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run locally using a build or development server.
