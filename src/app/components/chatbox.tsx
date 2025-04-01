@@ -21,7 +21,7 @@ export default function ChatComponent() {
           width: '100%',
           justifyContent: 'flex-end',
           alignItems: 'stretch',
-          height: '100%',
+          height: '100vh',
           backgroundColor: 'white', 
           padding: '1rem',
           boxSizing: 'border-box',
